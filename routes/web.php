@@ -58,3 +58,8 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
 });
 
+//rutas para controller de grado
+Route::group(['middleware' => 'auth'], function () {
+	Route::resource('grados', 'App\Http\Controllers\GradoController', ['except' => ['show']]);
+});
+

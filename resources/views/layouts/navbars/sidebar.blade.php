@@ -5,8 +5,8 @@
       Tip 2: you can also add an image using data-image tag
   -->
   <div class="logo">
-    <a href="https://creative-tim.com/" class="simple-text logo-normal">
-      {{ __('Creative Tim') }}
+    <a href="" class="simple-text logo-normal">
+      {{ __('Sistema Escolar') }}
     </a>
   </div>
   <div class="sidebar-wrapper">
@@ -17,6 +17,14 @@
             <p>{{ __('Dashboard') }}</p>
         </a>
       </li>
+      <!-- agregamos crud de grados-->
+      <li class="nav-item{{ $activePage == 'grados' ? ' active' : '' }}">
+        <a class="nav-link" href="{{ route('grados.index') }}">
+          <i class="material-icons">content_paste</i>
+            <p>{{ __('Grados') }}</p>
+        </a>
+      </li>
+      <!--
       <li class="nav-item {{ ($activePage == 'profile' || $activePage == 'user-management') ? ' active' : '' }}">
         <a class="nav-link" data-toggle="collapse" href="#laravelExample" aria-expanded="true">
           <i><img style="width:25px" src="{{ asset('material') }}/img/laravel.svg"></i>
@@ -83,6 +91,7 @@
           <p>{{ __('Upgrade to PRO') }}</p>
         </a>
       </li>
+      -->
     </ul>
   </div>
 </div>
