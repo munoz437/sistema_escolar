@@ -40,7 +40,12 @@
                   <label class="col-sm-2 col-form-label">{{ __('Nivel') }}</label>
                   <div class="col-sm-7">
                     <div class="form-group{{ $errors->has('nivel') ? ' has-danger' : '' }}">
-                      <input class="form-control{{ $errors->has('nivel') ? ' is-invalid' : '' }}" name="nivel" id="input-nivel" type="text" placeholder="{{ __('Primaria') }}" value="{{ old('nivel',$grado->nivel) }}" required />
+                      <select class="form-control{{ $errors->has('nivel') ? ' is-invalid' : '' }}" name="nivel" id="input-nivel" required>
+                          <option value="">Selecciona un nivel</option>
+                          <option value="Primaria" {{ old('nivel',$grado->nivel) == 'Primaria' ? 'selected' : '' }}>Primaria</option>
+                          <option value="Secundaria" {{ old('nivel',$grado->nivel) == 'Secundaria' ? 'selected' : '' }}>Secundaria</option>
+                          <option value="Bachillerato" {{ old('nivel',$grado->nivel) == 'Bachillerato' ? 'selected' : '' }}>Bachillerato</option>
+                      </select>
                       @if ($errors->has('nivel'))
                         <span id="nivel-error" class="error text-danger" for="input-nivel">{{ $errors->first('nivel') }}</span>
                       @endif
